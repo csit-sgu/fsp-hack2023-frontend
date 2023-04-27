@@ -1,6 +1,6 @@
 <template>
     <!-- FIX: width overflow -->
-    <b-navbar fixed-top=true >
+    <b-navbar fixed-top=true transparent=true >
         <template #brand>
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <img src="@/assets/images/logo.png">
