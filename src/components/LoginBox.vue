@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BackgroundSquares from '../components/BackgroundSquares.vue';
+import { BACKEND_URL } from '../config'
 </script>
 
 <script lang="ts">
@@ -19,10 +20,9 @@ export default {
         email: this.inputEmail,
         password: this.inputPassword
       };
-      console.log(JSON.stringify(formData));
       axios
         .request({
-          url: 'http://100.69.114.200:5002/auth/login',
+          url: `${BACKEND_URL}/auth/login`,
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           data: JSON.stringify(formData),

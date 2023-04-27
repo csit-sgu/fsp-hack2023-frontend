@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Card from './Card.vue'
+import { BACKEND_URL } from '../config'
 import BackgroundSquares from '../components/BackgroundSquares.vue';
 </script>
 
@@ -21,8 +22,9 @@ export default {
     }
   },
   mounted: function () {
+    console.log(`${BACKEND_URL}/events`)
     axios.request({
-      url: 'http://100.69.114.200:5001/events',
+      url: `${BACKEND_URL}/events`,
       method: 'get',
       headers: { 'Content-Type': 'application/json' },
       params: {
@@ -31,14 +33,13 @@ export default {
       }
     })
       .then(response => {
-        this.cards = response.data.map(card => ({
+        this.cards = response.data.map((card: Card) => ({
           name: card.name,
           about: card.about,
           location: card.location,
           date_started: card.date_started,
           date_ended: card.date_ended,
         }))
-        console.log(response)
       })
   }
 }
@@ -52,17 +53,6 @@ export default {
         <Card :name="card.name" :location="card.location" :about="card.about" :date_ended="card.date_ended"
           :date_started="card.date_started" />
       </template>
-      <!-- <Card title="Хакатон в рамках Всероссийских соревнований по спортивному программированию"/> 
-      <Card title="Хакатон в рамках Всероссийских соревнований по спортивному программированию"/>
-      <Card title="Хакатон в рамках Всероссийских соревнований по спортивному программированию"/>
-      <Card title="Хакатон в рамках Всероссийских соревнований по спортивному программированию"/>
-      <Card title="Хакатон в рамках Всероссийских соревнований по спортивному программированию"/> -->
     </div>
   </div>
 </template>
-
-<style scoped>
-.cview {
-  padding: 100px;
-}
-</style>
