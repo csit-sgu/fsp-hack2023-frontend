@@ -3,13 +3,7 @@ import Card from './Card.vue'
 </script>
 
 <template>
-  <div class="mt-36 mb-36 grid grid-cols-3 gap-y-10 gap-x-10">
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+  <div class="grid grid-cols-3 gap-y-10 gap-x-10">
     <Card />
     <Card />
     <Card />
