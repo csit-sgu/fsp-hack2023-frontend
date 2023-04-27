@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import Card from './Card.vue'
+import BackgroundSquares from '../components/BackgroundSquares.vue';
 </script>
 
 <template>
-  <div class="mt-36 mb-36 grid grid-cols-3 gap-y-10 gap-x-10">
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+  <div>
+    <BackgroundSquares />
+    <div class="grid grid-cols-3 gap-y-10 gap-x-10">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
   </div>
 </template>
 

@@ -1,16 +1,17 @@
 import Vue from 'vue'
 
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
-
 import App from './App.vue'
 import './assets/main.css'
 
 import router from './router'
 
-Vue.use(Buefy)
+import { createPinia, PiniaVuePlugin } from 'pinia'
+
+Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
 
 new Vue({
   router,
-  render: (h) => h(App)
+  render: (h) => h(App),
+  pinia,
 }).$mount('#app')

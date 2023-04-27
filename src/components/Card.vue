@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-none rounded-2xl bg-neutral-100 w-[360px] h-[430px]">
+  <div class="flex-none rounded-2xl border bg-neutral-50 w-[360px] h-[430px]">
     <!-- <a href="#">
       <img class="card__image" alt="" />
     </a> -->
@@ -7,14 +7,14 @@
       <div class="mb-2 text-xl font-medium leading-tight text-neutral-900">
         Хакатон в рамках Всероссийских соревнований по спортивному программированию
       </div>
-      <div class="text-sm p-[10px]">
-        <span class="text-[#FF9533]">Дата проведения:</span>
+      <div class="text-sm py-5">
+        <span class="text-[color:var(--primary-color)]">Дата проведения:</span>
         <div class="grid grid-cols-2 gap-x-[10px]">
-          <span class="text-[#FF9533] ">Начало:</span> <span>27 апреля 2023</span>
-          <span class="text-[#FF9533]">Конец:</span> <span>27 апреля 2023</span>
+          <span class="text-[color:var(--primary-color)] ">Начало:</span> <span>27 апреля 2023</span>
+          <span class="text-[#color:var(--primary-color)]">Конец:</span> <span>27 апреля 2023</span>
         </div>
       </div>
-      <p class="mb-4 text-sm text-neutral-600 h-[125px] overflow-hidden">
+      <p class="mb-4 text-sm text-neutral-600 h-[115px] overflow-hidden">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta dolor
         ac bibendum aliquet. Quisque nec tortor vel purus vulputate blandit ut
         et tellus. Maecenas euismod, ante non bibendum commodo, ligula dui
@@ -24,7 +24,7 @@
       </p>
       <div class="flex justify-center">
         <button type="button"
-          class="inline-block w-fit rounded-lg bg-[#FF9533] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
+          class="inline-block w-fit rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
           Открыть подробности
         </button>
       </div>
