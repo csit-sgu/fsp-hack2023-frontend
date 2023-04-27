@@ -8,10 +8,10 @@
         Хакатон в рамках Всероссийских соревнований по спортивному программированию
       </div>
       <div class="text-sm py-5">
-        <span class="text-[color:var(--primary-color]">Дата проведения:</span>
+        <span class="text-[color:var(--primary-color)]">Дата проведения:</span>
         <div class="grid grid-cols-2 gap-x-[10px]">
-          <span class="text-[color:var(--primary-color] ">Начало:</span> <span>27 апреля 2023</span>
-          <span class="text-[#color:var(--primary-color]">Конец:</span> <span>27 апреля 2023</span>
+          <span class="text-[color:var(--primary-color)] ">Начало:</span> <span>27 апреля 2023</span>
+          <span class="text-[#color:var(--primary-color)]">Конец:</span> <span>27 апреля 2023</span>
         </div>
       </div>
       <p class="mb-4 text-sm text-neutral-600 h-[115px] overflow-hidden">
@@ -24,7 +24,7 @@
       </p>
       <div class="flex justify-center">
         <button type="button"
-          class="inline-block w-fit rounded-lg bg-[color:var(--primary-color] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
+          class="inline-block w-fit rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
           Открыть подробности
         </button>
       </div>

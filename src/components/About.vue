@@ -28,7 +28,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
         class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
         <div class="lg:pr-4">
           <div class="lg:max-w-lg">
-            <p class="text-base font-semibold leading-7 text-[color:var(--primary-color]">Присоединяйся!</p>
+            <p class="text-base font-semibold leading-7 text-[color:var(--primary-color)]">Присоединяйся!</p>
             <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Увлекательные соревнования</h1>
             <p class="mt-6 text-xl leading-8 text-gray-700">Наша цель — сделать мир программирования
               <em>ещё интереснее и увлекательнее</em>. Мы стремимся предоставлять соревнования и

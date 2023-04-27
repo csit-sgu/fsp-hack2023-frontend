@@ -39,7 +39,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             Почта
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-password" type="password" placeholder="bob@aboba.com">
         </div>
       </div>
@@ -49,7 +49,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             Пароль
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-password" type="password" placeholder="******************">
         </div>
       </div>
@@ -59,7 +59,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             Город
           </label>
           <input
-            class="appearance-none p-3 block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-city" type="text" placeholder="Саратов">
         </div>
       </div>
@@ -69,7 +69,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
         </label>
         <div class="flex flex-wrap -mx-3 mb-6">
           <select
-            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 mb-0 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-state">
             <option>Саратовская область</option>
             <option>Воронежская область</option>
@@ -89,7 +89,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             Почтовый индекс
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-zip" type="text" placeholder="410000">
         </div>
       </div>

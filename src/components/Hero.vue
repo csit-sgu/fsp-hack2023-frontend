@@ -16,7 +16,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
                 </p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                     <a href="/register"
-                        class="rounded-md bg-[color:var(--primary-color] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[color:var(--primary-color] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[color:var(--primary-color]">
+                        class="rounded-md bg-[color:var(--primary-color)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#FF9533] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[color:var(--primary-color)]">
                         Участвовать
                     </a>
                     <a href="/about" class="text-sm font-semibold leading-6 text-gray-900">

@@ -12,7 +12,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             Электронная почта
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="username" type="text" placeholder="bob@aboba.com">
         </div>
         <div class="mb-6">
@@ -20,7 +20,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             Пароль
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="password" type="password" placeholder="******************">
         </div>
         <div class="flex items-center justify-between">
@@ -29,7 +29,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             type="button">
             Войти
           </button>
-          <a class="inline-block align-baseline font-bold text-sm text-[color:var(--primary-color]" href="/register">
+          <a class="inline-block align-baseline font-bold text-sm text-[color:var(--primary-color)]" href="/register">
             Регистрация
           </a>
         </div>
