@@ -21,6 +21,16 @@ const router = new VueRouter({
       path: '/competitions',
       name: 'competitions',
       component: () => import('../views/CompetitionsView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterView.vue')
     }
   ]
 })
