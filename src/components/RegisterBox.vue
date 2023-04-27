@@ -40,7 +40,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-password" type="password" placeholder="bob@aboba.com">
+            id="grid-password" type="text" placeholder="bob@aboba.com">
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
