@@ -2,6 +2,7 @@
   <nav class="absolute py-4 bg-white  w-full z-20 top-0 left-0 border-b border-gray-300">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
       <a href="/" class="flex items-center">
+        <img class="w-[30px] sm:w-[30px] mr-3" src="@/assets/images/orange-logo.svg" alt="">
         <span class="text-black self-center text-xl font-semibold whitespace-nowrap">Апельсины</span>
       </a>
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
