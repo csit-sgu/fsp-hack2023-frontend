@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-  props: ['title']
+  props: ['name', 'about', 'location', 'date_started', 'date_ended']
 }
 </script>
 
@@ -11,26 +11,21 @@ export default {
     </a> -->
     <div class="p-[25px] flex flex-col">
       <div class="mb-2 text-xl font-medium leading-tight text-neutral-900">
-        {{ title }}
+        {{ name }}
       </div>
       <div class="text-sm py-5">
-        <span class="text-[color:var(--primary-color)]">Дата проведения:</span>
+        <span class="text-black">Дата проведения:</span>
         <div class="grid grid-cols-2 gap-x-[10px]">
-          <span class="text-[color:var(--primary-color)] ">Начало:</span> <span>27 апреля 2023</span>
-          <span class="text-[#color:var(--primary-color)]">Конец:</span> <span>27 апреля 2023</span>
+          <span class="text-[color:var(--primary-color)] ">Начало:</span> <span>{{ date_started }}</span>
+          <span class="text-[color:var(--primary-color)]">Конец:</span> <span>{{ date_ended }}</span>
         </div>
       </div>
-      <p class="mb-4 text-sm text-neutral-600 h-[115px] overflow-hidden">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta dolor
-        ac bibendum aliquet. Quisque nec tortor vel purus vulputate blandit ut
-        et tellus. Maecenas euismod, ante non bibendum commodo, ligula dui
-        vehicula mauris, aliquet auctor orci velit sit amet quam. Suspendisse
-        pulvinar sed est vel blandit. Etiam porttitor ligula sit amet ligula
-        ullamcorper sollicitudin.
+      <p class="mb-4 text-sm text-neutral-600 h-[225px] overflow-hidden">
+        {{ about }}
       </p>
-      <div class="flex justify-center">
+      <div class="relative justify-center">
         <button type="button"
-          class="inline-block w-fit rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
+          class="absolute inset-x-0 bottom-0 rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
           Открыть подробности
         </button>
       </div>
