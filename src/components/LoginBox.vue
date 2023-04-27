@@ -29,7 +29,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
             type="button">
             Войти
           </button>
-          <a class="inline-block align-baseline font-bold text-sm text-[#FF9533]" href="/register">
+          <a class="inline-block align-baseline font-bold text-sm text-[color:var(--primary-color]" href="/register">
             Регистрация
           </a>
         </div>
