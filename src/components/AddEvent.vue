@@ -2,6 +2,23 @@
 import BackgroundSquares from '../components/BackgroundSquares.vue';
 </script>
 
+<script lang="ts">
+export default {
+  data: function () {
+    return {
+      datetime_start: null,
+      datetime_end: null,
+    }
+  },
+  methods: {
+    printer: function(ev: Event) {
+      console.log(this.datetime_start)
+      console.log(this.datetime_end)
+    }
+  }
+}
+</script>
+
 <template>
   <div class="my-10 flex justify-center relative isolate px-6 pt-14 lg:px-8 md:text-center">
     <BackgroundSquares />
@@ -36,22 +53,12 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
         </div>
       </div>
 
-      <div class="relative flex flex-wrap -mx-3 -mb-4">
+      <div class="relative flex flex-wrap -mx-3 -mb-2">
         <div class="w-full py-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
             Время начала
           </label>
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 mt-3 pointer-events-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <input type="text"
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 pl-10 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            placeholder="2023/03/27 01:00:00" />
+          <VDatePicker v-model="datetime_start" mode="dateTime" expanded is24hr />
         </div>
       </div>
 
@@ -60,25 +67,15 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
             Время Окончания
           </label>
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 mt-3 pointer-events-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <input type="text"
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 pl-10 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            placeholder="2023/03/27 01:00:00" />
+          <VDatePicker v-model="datetime_end" mode="dateTime" expanded is24hr />
         </div>
       </div>
 
-      <button
+      <div
         class="bg-[color:var(--primary-color)] hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="button">
+        type="button" @click="printer">
         Создать соревнование
-      </button>
+      </div>
     </form>
   </div>
 </template>
