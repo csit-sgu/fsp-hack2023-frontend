@@ -31,6 +31,11 @@ const router = new VueRouter({
       path: '/register',
       name: 'register',
       component: () => import('../views/RegisterView.vue')
+    },
+    {
+      path: '/add-event',
+      name: 'add-event',
+      component: () => import('../views/AddEventView.vue')
     }
   ]
 })

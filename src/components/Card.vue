@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  props: ['title']
+}
+</script>
+
 <template>
   <div class="flex-none rounded-2xl border bg-neutral-50 w-[360px] h-[430px]">
     <!-- <a href="#">
@@ -5,7 +11,7 @@
     </a> -->
     <div class="p-[25px] flex flex-col">
       <div class="mb-2 text-xl font-medium leading-tight text-neutral-900">
-        Хакатон в рамках Всероссийских соревнований по спортивному программированию
+        {{ title }}
       </div>
       <div class="text-sm py-5">
         <span class="text-[color:var(--primary-color)]">Дата проведения:</span>
