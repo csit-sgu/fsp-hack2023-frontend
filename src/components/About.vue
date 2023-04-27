@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import BackgroundSquares from '../components/BackgroundSquares.vue';
+</script>
+
 <template>
   <div class="relative isolate overflow-hidden bg-white px-6 pt-24 sm:py-32 lg:overflow-visible lg:px-0">
+    <BackgroundSquares />
     <div class="absolute inset-0 -z-10 overflow-hidden">
       <svg
         class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -26,16 +31,16 @@
             <p class="text-base font-semibold leading-7 text-[#FF9533]">Присоединяйся!</p>
             <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Увлекательные соревнования</h1>
             <p class="mt-6 text-xl leading-8 text-gray-700">Наша цель — сделать мир программирования
-            <em>ещё интереснее и увлекательнее</em>. Мы стремимся предоставлять соревнования и
-            хакатоны на различные темы, чтобы дать возможность разработчикам и программистам
-            проявить свой талант, повысить свой уровень знаний и навыков, а также завести новых
-            знакомых и друзей.</p>
+              <em>ещё интереснее и увлекательнее</em>. Мы стремимся предоставлять соревнования и
+              хакатоны на различные темы, чтобы дать возможность разработчикам и программистам
+              проявить свой талант, повысить свой уровень знаний и навыков, а также завести новых
+              знакомых и друзей.
+            </p>
           </div>
         </div>
       </div>
       <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-        <img class="w-[48rem] sm:w-[57rem]"
-          src="@/assets/images/about_side.png" alt="">
+        <img class="w-[48rem] sm:w-[57rem]" src="@/assets/images/about_side.png" alt="">
       </div>
       <div
         class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -47,11 +52,12 @@
             <p class="mt-8">Кроме того, наш сайт предоставляет возможность организаторам создавать новые соревнования и
               хакатоны, используя нашу платформу. Это простой и удобный способ создать свое мероприятие и привлечь к нему
               участников со всего мира.</p>
-          <p class="mt-6">Мы стремимся создавать сообщество программистов, которые разделяют нашу страсть к
-            информационным технологиям и нашу цель - улучшить мир через инновационные идеи и продукты. Мы приглашаем вас
-            присоединиться к нашему сообществу и стать частью этого замечательного опыта.</p>
+            <p class="mt-6">Мы стремимся создавать сообщество программистов, которые разделяют нашу страсть к
+              информационным технологиям и нашу цель - улучшить мир через инновационные идеи и продукты. Мы приглашаем вас
+              присоединиться к нашему сообществу и стать частью этого замечательного опыта.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div></template>
+</template>

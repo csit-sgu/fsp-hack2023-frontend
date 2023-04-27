@@ -25,7 +25,7 @@
             type="button">
             Войти
           </button>
-          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/register">
+          <a class="inline-block align-baseline font-bold text-sm text-[#FF9533]" href="/register">
             Регистрация
           </a>
         </div>

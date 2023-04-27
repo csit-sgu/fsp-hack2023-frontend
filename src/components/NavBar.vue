@@ -1,5 +1,5 @@
 <template>
-  <nav class="absolute bg-white w-full z-20 top-0 left-0 border-b border-gray-300">
+  <nav class="absolute py-4 bg-white  w-full z-20 top-0 left-0 border-b border-gray-300">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
       <a href="/" class="flex items-center">
         <span class="text-black self-center text-xl font-semibold whitespace-nowrap">Апельсины</span>

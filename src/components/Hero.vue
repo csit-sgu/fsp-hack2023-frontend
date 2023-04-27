@@ -1,22 +1,10 @@
+<script setup lang="ts">
+import BackgroundSquares from '../components/BackgroundSquares.vue';
+</script>
+
 <template>
     <div class="flex items-center justify-center h-screen relative isolate px-6 pt-14 lg:px-8 md:text-center">
-        <div class="absolute inset-0 -z-10 overflow-hidden">
-            <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
-                aria-hidden="true">
-                <defs>
-                    <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
-                        patternUnits="userSpaceOnUse">
-                        <path d="M100 200V.5M.5 .5H200" fill="none" />
-                    </pattern>
-                </defs>
-                <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-                    <path
-                        d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                        stroke-width="0" />
-                </svg>
-                <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
-            </svg>
-        </div>
+    <BackgroundSquares />
         <div class="h-fit flex items-center justify-center mx-auto max-w-5xl">
             <div class="text-center">
                 <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -27,7 +15,7 @@
                     Прими участие в разработке передовых IT-решений.
                 </p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="/login"
+                    <a href="/register"
                         class="rounded-md bg-[#FF9533] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#FF9533] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#FF9533]">
                         Участвовать
                     </a>

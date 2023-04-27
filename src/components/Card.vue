@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-none rounded-2xl bg-neutral-100 w-[360px] h-[430px]">
+  <div class="flex-none rounded-2xl border bg-neutral-50 w-[360px] h-[430px]">
     <!-- <a href="#">
       <img class="card__image" alt="" />
     </a> -->
