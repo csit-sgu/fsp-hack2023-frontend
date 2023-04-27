@@ -2,10 +2,51 @@
 import BackgroundSquares from '../components/BackgroundSquares.vue';
 </script>
 
+<script lang="ts">
+import axios from 'axios'
+
+export default {
+  data: function () {
+    return {
+      inputName: null,
+      inputSurname: null,
+      inputPatronymic: null,
+      inputEmail: null,
+      inputPassword: null,
+      inputCity: null,
+      inputRegion: null,
+      inputPostal: null,
+      response: null
+    }
+  },
+  methods: {
+    register: function (_: Event) {
+      let formData = {
+        email: this.inputEmail,
+        password: this.inputPassword
+      };
+      console.log(JSON.stringify(formData));
+      axios
+        .request({
+          url: 'http://100.69.114.200:5002/auth/register',
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          data: JSON.stringify(formData),
+          withCredentials: true
+        })
+        .then(response => {
+          this.response = response.data;
+          console.log(response)
+        });
+    }
+  }
+}
+</script>
+
 <template>
   <div class="my-10 flex justify-center relative isolate px-6 pt-14 lg:px-8 md:text-center">
     <BackgroundSquares />
-    <form class="w-full max-w-lg bg-white backdrop border rounded-lg px-8 pt-6 pb-8 mb-4">
+    <form @submit.prevent="register" class="w-full max-w-lg bg-white backdrop border rounded-lg px-8 pt-6 pb-8 mb-4">
       <div class="flex-wrap -mx-3 mb-6">
         <div class="w-full py-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -13,7 +54,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-first-name" type="text" placeholder="Мирон">
+            v-model="inputName" id="grid-first-name" type="text" placeholder="Мирон">
           <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
         </div>
         <div class="w-full py-3">
@@ -22,7 +63,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-last-name" type="text" placeholder="Сергеев">
+            v-model="inputSurname" id="grid-last-name" type="text" placeholder="Сергеев">
         </div>
         <div class="w-full py-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -30,7 +71,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-last-name" type="text" placeholder="Сергеевич">
+            v-model="inputPatronymic" type="text" placeholder="Сергеевич">
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -40,7 +81,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-password" type="text" placeholder="bob@aboba.com">
+            v-model="inputEmail" type="text" placeholder="bob@aboba.com">
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -50,7 +91,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-password" type="password" placeholder="******************">
+            v-model="inputPassword" id="grid-password" type="password" placeholder="******************">
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -60,7 +101,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-city" type="text" placeholder="Саратов">
+            v-model="inputCity" id="grid-city" type="text" placeholder="Саратов">
         </div>
       </div>
       <div class="w-full py-3">
@@ -70,7 +111,7 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
         <div class="flex flex-wrap -mx-3 mb-6">
           <select
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-state">
+            v-model="inputRegion" id="grid-state">
             <option>Саратовская область</option>
             <option>Воронежская область</option>
             <option>Волгоградская облась</option>
@@ -90,12 +131,12 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-zip" type="text" placeholder="410000">
+            v-model="inputPostal" id="grid-zip" type="text" placeholder="410000">
         </div>
       </div>
       <button
         class="bg-[color:var(--primary-color)] hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="button">
+        type="submit">
         Зарегистрироваться
       </button>
     </form>

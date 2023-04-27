@@ -38,8 +38,6 @@ export default {
           date_started: card.date_started,
           date_ended: card.date_ended,
         }))
-        // response.data.forEach(card => {
-        // });
         console.log(response)
       })
   }

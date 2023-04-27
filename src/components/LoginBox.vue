@@ -22,14 +22,13 @@ export default {
       console.log(JSON.stringify(formData));
       axios
         .request({
-          url: 'http://100.69.114.200:5001/auth/login',
+          url: 'http://100.69.114.200:5002/auth/login',
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           data: JSON.stringify(formData),
           withCredentials: true
         })
         .then(response => {
-          this.response = response.data;
           console.log(response)
         });
     }
