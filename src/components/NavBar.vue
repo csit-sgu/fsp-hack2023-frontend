@@ -1,7 +1,7 @@
 <template>
-  <nav class="absolute bg-white w-full z-20 top-0 left-0 border-b border-gray-300">
+  <nav class="fixed bg-white w-full z-20 top-0 left-0 border-b border-gray-300">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
-      <a href="#" class="flex items-center">
+      <a href="/" class="flex items-center">
         <span class="text-black self-center text-xl font-semibold whitespace-nowrap">Апельсины</span>
       </a>
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
@@ -9,15 +9,15 @@
     rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0
     md:bg-white">
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-black hover:text-[#FF9533] rounded md:bg-transparent md:p-0"
+            <a href="/" class="block py-2 pl-3 pr-4 text-black hover:text-[#FF9533] rounded md:bg-transparent md:p-0"
               aria-current="page">Главная</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-black hover:text-[#FF9533]
+            <a href="/about" class="block py-2 pl-3 pr-4 text-black hover:text-[#FF9533]
         rounded md:bg-transparent md:p-0">О нас</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-black hover:text-[#FF9533]
+            <a href="/competitions" class="block py-2 pl-3 pr-4 text-black hover:text-[#FF9533]
         rounded md:bg-transparent md:p-0">Соревнования</a>
           </li>
         </ul>
