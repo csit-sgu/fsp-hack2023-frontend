@@ -1,14 +1,39 @@
 <script setup lang="ts">
+import { BACKEND_URL } from '@/config';
+import axios from 'axios';
 </script>
 
 <script lang="ts">
 export default {
-  props: ['name', 'about', 'location', 'date_started', 'date_ended']
+  // props: ['name', 'about', 'location', 'date_started', 'date_ended']
+  data() {
+    return {
+      name: null,
+      about: null,
+      location: null,
+      date_started: null,
+      date_ended: null
+    }
+  },
+  mounted: function () {
+    axios.request({
+      url: `${BACKEND_URL}/event/${this.$route.params.id}`,
+      method: 'get',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(response => {
+        this.name = response.data.name
+        this.about = response.data.about
+        this.location = response.data.location
+        this.date_started = response.data.date_started
+        this.date_ended = response.data.date_ended
+      })
+  }
 }
 </script>
 
 <template>
-  <div class="items-center justify-center mx-auto w-2/3 mt-36">
+  <div class="items-center justify-center mx-auto w-2/3 mt-36 min-h-screen">
     <div class="text-4xl">
       {{ name }}
     </div>

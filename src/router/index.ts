@@ -29,7 +29,7 @@ const router = createRouter({
       component: () => import('../views/RegisterView.vue')
     },
     {
-      path: '/profile',
+      path: '/profile/:id',
       name: 'profile',
       component: () => import('../views/ProfileView.vue')
     },
@@ -44,7 +44,7 @@ const router = createRouter({
       component: () => import('../views/CalendarView.vue')
     },
     {
-      path: '/event',
+      path: '/event/:id',
       name: 'event',
       component: () => import('../views/EventView.vue')
     }

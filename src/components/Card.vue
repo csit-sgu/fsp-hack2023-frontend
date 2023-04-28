@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-  props: ['name', 'about', 'location', 'date_started', 'date_ended']
+  props: ['name', 'about', 'location', 'date_started', 'date_ended', 'id']
 }
 </script>
 
@@ -24,10 +24,10 @@ export default {
         {{ about }}
       </p>
       <div class="relative justify-center">
-        <button type="button"
-          class="absolute inset-x-0 bottom-0 rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
+        <a type="button" :href="'/event/' + id"
+          class="absolute inset-x-0 bottom-0 rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs text-center font-medium uppercase leading-normal text-white">
           Открыть подробности
-        </button>
+        </a>
       </div>
     </div>
   </div>

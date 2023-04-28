@@ -4,4 +4,5 @@ export type Event = {
   location: string,
   date_started: string,
   date_ended: string,
+  id: string
 }
