@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 import { BACKEND_URL } from '@/config';
+import { router } from '@/router'
 
 export const useAuthStore = defineStore({
   id: "auth",
@@ -18,14 +19,14 @@ export const useAuthStore = defineStore({
             data: JSON.stringify({email: email, password: password}),
             withCredentials: true
           });
-      console.log(response)
       this.token = { token : response.data.token };
       localStorage.setItem('auth', JSON.stringify(this.token))
-      console.log(this.token);
+      router.push('/')
     },
     logout() {
       this.token = null
       localStorage.removeItem('auth')
+      router.push('/')
     }
   },
 })
