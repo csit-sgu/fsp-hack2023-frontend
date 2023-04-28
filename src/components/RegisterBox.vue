@@ -8,17 +8,17 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      inputName: String,
-      inputSurname: String,
-      inputPatronymic: String,
-      inputBirthday: String,
-      inputOrganization: String,
-      inputPassport: String,
-      inputPhone: String,
-      inputAddress: String,
-      inputInsurance: String,
-      inputEmail: String,
-      inputPassword: String,
+      inputName: null,
+      inputSurname: null,
+      inputPatronymic: null,
+      inputBirthday: null,
+      inputOrganization: null,
+      inputPassport: null,
+      inputPhone: null,
+      inputAddress: null,
+      inputInsurance: null,
+      inputEmail: null,
+      inputPassword: null,
       inputIsMale: null,
       inputIsFemale: null,
       response: null,
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     register: function (_: Event) {
-      let birthday: String = new this.inputBirthday;
+      let birthday: string = this.inputBirthday!;
       if (birthday != null) {
         birthday = birthday.replace('-', '/');
       }
@@ -79,7 +79,6 @@ export default {
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             v-model="inputName" id="grid-first-name" type="text" placeholder="Мирон">
-          <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
         </div>
         <div class="w-full py-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
