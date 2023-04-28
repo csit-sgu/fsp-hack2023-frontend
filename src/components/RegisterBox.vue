@@ -11,19 +11,43 @@ export default {
       inputName: null,
       inputSurname: null,
       inputPatronymic: null,
+      inputBirthday: null,
+      inputOrganization: null,
+      inputPassport: null,
+      inputPhone: null,
+      inputAddress: null,
+      inputInsurance: null,
       inputEmail: null,
       inputPassword: null,
-      inputCity: null,
-      inputRegion: null,
-      inputPostal: null,
-      response: null
+      inputIsMale: null,
+      inputIsFemale: null,
+      response: null,
     }
   },
   methods: {
     register: function (_: Event) {
+      // let 
+      // if (this.inputBirthday) {
+      //   let birthday = this.inputBirthday.replace('a', 'a');
+      // }
+      let gender = this.inputIsFemale == 'on' ? 'FEMALE' : 'MALE';
       let formData = {
-        email: this.inputEmail,
-        password: this.inputPassword
+        auth: {
+          email: this.inputEmail,
+          password: this.inputPassword
+        },
+        profile: {
+          name: this.inputName,
+          surname: this.inputSurname,
+          patronymic: this.inputPatronymic,
+          birthday: this.inputBirthday,
+          passport: this.inputPassport,
+          phone: this.inputPhone,
+          address: this.inputAddress,
+          organization: this.inputOrganization,
+          insurance: this.inputInsurance,
+          gender: gender
+        }
       };
       console.log(JSON.stringify(formData));
       axios
@@ -74,6 +98,75 @@ export default {
             v-model="inputPatronymic" type="text" placeholder="Сергеевич">
         </div>
       </div>
+      <form class="flex -mt-4 mb-4 w-full justify-center text-center">
+        <div class="mr-20">
+          <input v-model="inputIsMale" checked="checked" id="male-inp" name="gender" type="radio" class="border mr-2 p-2 bg-white" placeholder="Example" />
+          <label for="male-inp">Мужчина</label>
+        </div>
+        <div>
+          <input v-model="inputIsFemale" id="female-inp" name="gender" type="radio" class="border mr-2 p-2 bg-white" placeholder="Example" />
+          <label for="female-inp">Женщина</label>
+        </div>
+      </form>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full py-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Адрес проживания
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            v-model="inputAddress" type="text" placeholder="г. Санкт-Петербург, ул. Пушкина, д. 2">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full py-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Организация
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            v-model="inputOrganization" type="text"
+            placeholder="Саратовский Государственный Университет им. Н. Г. Чернышевского">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full py-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Полис страхования
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            v-model="inputInsurance" type="text" placeholder="999994">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full py-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Серия и номер паспорта
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            v-model="inputPassport" type="text" placeholder="6316 117391">
+        </div>
+      </div>
+      <div class="relative flex flex-wrap -mx-3 mb-6">
+        <div class="w-full py-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+            Дата рождения
+          </label>
+          <VDatePicker v-model="inputBirthday" mode="date" expanded is24hr />
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full py-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Номер телефона
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            v-model="inputPhone" type="text" placeholder="+78005553535">
+        </div>
+      </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full py-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
@@ -92,46 +185,6 @@ export default {
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             v-model="inputPassword" id="grid-password" type="password" placeholder="******************">
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full py-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-            Город
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            v-model="inputCity" id="grid-city" type="text" placeholder="Саратов">
-        </div>
-      </div>
-      <div class="w-full py-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-          Регион
-        </label>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <select
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            v-model="inputRegion" id="grid-state">
-            <option>Саратовская область</option>
-            <option>Воронежская область</option>
-            <option>Волгоградская облась</option>
-            <option>Курская область</option>
-          </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full py-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-            Почтовый индекс
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            v-model="inputPostal" id="grid-zip" type="text" placeholder="410000">
         </div>
       </div>
       <button
