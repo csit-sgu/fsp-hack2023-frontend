@@ -8,17 +8,17 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      inputName: null,
-      inputSurname: null,
-      inputPatronymic: null,
-      inputBirthday: null,
-      inputOrganization: null,
-      inputPassport: null,
-      inputPhone: null,
-      inputAddress: null,
-      inputInsurance: null,
-      inputEmail: null,
-      inputPassword: null,
+      inputName: String,
+      inputSurname: String,
+      inputPatronymic: String,
+      inputBirthday: String,
+      inputOrganization: String,
+      inputPassport: String,
+      inputPhone: String,
+      inputAddress: String,
+      inputInsurance: String,
+      inputEmail: String,
+      inputPassword: String,
       inputIsMale: null,
       inputIsFemale: null,
       response: null,
@@ -26,11 +26,11 @@ export default {
   },
   methods: {
     register: function (_: Event) {
-      // let 
-      // if (this.inputBirthday) {
-      //   let birthday = this.inputBirthday.replace('a', 'a');
-      // }
-      let gender = this.inputIsFemale == 'on' ? 'FEMALE' : 'MALE';
+      let birthday: String = new this.inputBirthday;
+      if (birthday != null) {
+        birthday = birthday.replace('-', '/');
+      }
+      let gender = this.inputIsFemale == "on" ? 'FEMALE' : 'MALE';
       let formData = {
         auth: {
           email: this.inputEmail,
