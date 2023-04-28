@@ -26,10 +26,8 @@ export default {
   },
   methods: {
     register: function (_: Event) {
-      let birthday: string = this.inputBirthday!;
-      if (birthday != null) {
-        birthday = birthday.replace('-', '/');
-      }
+      let bd: Date = this.inputBirthday
+      let birthday = bd.getFullYear() + '/' + bd.getMonth() + '/' + bd.getDay()
       let gender = this.inputIsFemale == "on" ? 'FEMALE' : 'MALE';
       let formData = {
         auth: {
