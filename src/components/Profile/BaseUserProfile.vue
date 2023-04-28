@@ -5,9 +5,7 @@ import PersonalData from './PersonalData.vue'
 <template>
   <div class="flex flex-row">
     <div class="rounded-full pr-7">
-      <img class="profile-avatar"
-        src="https://catherineasquithgallery.com/uploads/posts/2021-03/1614612233_137-p-fon-dlya-fotoshopa-priroda-209.jpg"
-        alt="">
+      <img class="profile-avatar" src="/avatar.png" alt="">
     </div>
     <div class="flex flex-col text-left pt-4">
       <div class="text-3xl">Хлебушкин Евстахий Евгениевич</div>

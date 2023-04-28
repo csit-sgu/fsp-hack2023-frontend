@@ -6,9 +6,6 @@ export default {
 
 <template>
   <div class="flex-none rounded-2xl border bg-neutral-50 w-[360px] h-[430px]">
-    <!-- <a href="#">
-      <img class="card__image" alt="" />
-    </a> -->
     <div class="p-[25px] flex flex-col">
       <div class="mb-2 text-xl font-medium leading-tight text-neutral-900">
         {{ name }}
@@ -20,7 +17,7 @@ export default {
           <span class="text-[color:var(--primary-color)]">Конец:</span> <span>{{ date_ended }}</span>
         </div>
       </div>
-      <p class="mb-4 text-sm text-neutral-600 h-[225px] overflow-hidden">
+      <p class="mb-4 text-sm text-neutral-600 h-[190px] overflow-hidden">
         {{ about }}
       </p>
       <div class="relative justify-center">

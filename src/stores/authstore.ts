@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 import { BACKEND_URL } from '@/config';
+import { router } from '@/router'
 
 export const useAuthStore = defineStore({
   id: "auth",
@@ -9,7 +10,8 @@ export const useAuthStore = defineStore({
   }),
   actions: {
     async signIn(email, password) {
-      let response = await
+      let result = null;
+      let response =
         axios
           .request({
             url: `${BACKEND_URL}/auth/login`,
@@ -17,15 +19,21 @@ export const useAuthStore = defineStore({
             headers: { 'Content-Type': 'application/json' },
             data: JSON.stringify({email: email, password: password}),
             withCredentials: true
+          }).then(response => {
+            if (response.status == 200) {
+              this.token = { token : response.data.token };
+              localStorage.setItem('auth', JSON.stringify(this.token))
+              router.push('/')
+            } else {
+              result = "Не удалось войти в систему"
+            }
           });
-      console.log(response)
-      this.token = { token : response.data.token };
-      localStorage.setItem('auth', JSON.stringify(this.token))
-      console.log(this.token);
+      return result;
     },
     logout() {
       this.token = null
       localStorage.removeItem('auth')
+      router.push('/')
     }
   },
 })

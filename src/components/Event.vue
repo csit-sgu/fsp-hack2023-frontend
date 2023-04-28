@@ -5,7 +5,6 @@ import axios from 'axios';
 
 <script lang="ts">
 export default {
-  // props: ['name', 'about', 'location', 'date_started', 'date_ended']
   data() {
     return {
       name: null,

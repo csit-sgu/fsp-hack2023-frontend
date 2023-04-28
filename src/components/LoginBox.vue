@@ -11,12 +11,16 @@ export default {
     return {
       inputEmail: null,
       inputPassword: null,
-      response: null
+      response: null,
+      err: ""
     }
   },
   methods: {
     async signin(_: Event) {
-      await this.auth.signIn(this.inputEmail, this.inputPassword)
+      let result = await this.auth.signIn(this.inputEmail, this.inputPassword)
+      if (result != null) {
+        this.err = result
+      }
     }
   }
 }
@@ -52,6 +56,9 @@ export default {
           <a class="inline-block align-baseline font-bold text-sm text-[color:var(--primary-color)]" href="/register">
             Регистрация
           </a>
+        </div>
+        <div class="mt-3 text-red-500">
+          {{ err }}
         </div>
       </form>
     </div>
