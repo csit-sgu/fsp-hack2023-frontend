@@ -6,17 +6,10 @@ import BackgroundSquares from '../components/BackgroundSquares.vue';
 
 <script lang="ts">
 import axios from 'axios'
-
-type Card = {
-  name: string,
-  about: string,
-  location: string,
-  date_started: string,
-  date_ended: string,
-}
+import type { Event } from './types'
 
 export default {
-  data: function (): { cards: Card[] } {
+  data: function (): { cards: Event[] } {
     return {
       cards: []
     }
@@ -33,7 +26,7 @@ export default {
       }
     })
       .then(response => {
-        this.cards = response.data.map((card: Card) => ({
+        this.cards = response.data.map((card: Event) => ({
           name: card.name,
           about: card.about,
           location: card.location,
