@@ -1,12 +1,12 @@
-<script setup lang="ts">
-import BackgroundSquares from '../components/BackgroundSquares.vue';
-import { BACKEND_URL } from '../config'
-</script>
-
 <script lang="ts">
-import axios from 'axios'
+import BackgroundSquares from '../components/BackgroundSquares.vue';
+import { useAuthStore } from '../stores/authstore'
 
 export default {
+  setup() {
+    const auth = useAuthStore();
+    return { auth };
+  },
   data: function () {
     return {
       inputEmail: null,
@@ -15,22 +15,8 @@ export default {
     }
   },
   methods: {
-    signin: function (event: Event) {
-      let formData = {
-        email: this.inputEmail,
-        password: this.inputPassword
-      };
-      axios
-        .request({
-          url: `${BACKEND_URL}/auth/login`,
-          method: 'post',
-          headers: { 'Content-Type': 'application/json' },
-          data: JSON.stringify(formData),
-          withCredentials: true
-        })
-        .then(response => {
-          console.log(response)
-        });
+    async signin(_: Event) {
+      await this.auth.signIn(this.inputEmail, this.inputPassword)
     }
   }
 }
