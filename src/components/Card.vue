@@ -1,14 +1,11 @@
 <script lang="ts">
 export default {
-  props: ['name', 'about', 'location', 'date_started', 'date_ended']
+  props: ['name', 'about', 'location', 'date_started', 'date_ended', 'id']
 }
 </script>
 
 <template>
   <div class="flex-none rounded-2xl border bg-neutral-50 w-[360px] h-[430px]">
-    <!-- <a href="#">
-      <img class="card__image" alt="" />
-    </a> -->
     <div class="p-[25px] flex flex-col">
       <div class="mb-2 text-xl font-medium leading-tight text-neutral-900">
         {{ name }}
@@ -20,14 +17,14 @@ export default {
           <span class="text-[color:var(--primary-color)]">Конец:</span> <span>{{ date_ended }}</span>
         </div>
       </div>
-      <p class="mb-4 text-sm text-neutral-600 h-[225px] overflow-hidden">
+      <p class="mb-4 text-sm text-neutral-600 h-[190px] overflow-hidden">
         {{ about }}
       </p>
       <div class="relative justify-center">
-        <button type="button"
-          class="absolute inset-x-0 bottom-0 rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white">
+        <a type="button" :href="'/event/' + id"
+          class="absolute inset-x-0 bottom-0 rounded-lg bg-[color:var(--primary-color)] px-6 pb-2 pt-2.5 text-xs text-center font-medium uppercase leading-normal text-white">
           Открыть подробности
-        </button>
+        </a>
       </div>
     </div>
   </div>

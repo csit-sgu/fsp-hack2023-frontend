@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAuthStore } from '@/stores/authstore'
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -42,8 +43,23 @@ const router = createRouter({
       path: '/calendar',
       name: 'calendar',
       component: () => import('../views/CalendarView.vue')
+    },
+    {
+      path: '/event/:id',
+      name: 'event',
+      component: () => import('../views/EventView.vue')
     }
   ]
+})
+
+router.beforeEach(async (to) => {
+  const publicPages = ['/', '/competitions', '/calendar', '/about', '/login', '/register', '/event/*']
+  const authRequired = !publicPages.includes(to.path)
+  const auth = useAuthStore()
+
+  if (authRequired && !auth.token) {
+    return '/login'
+  }
 })
 
 export default router

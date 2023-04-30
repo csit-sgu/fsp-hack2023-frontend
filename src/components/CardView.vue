@@ -32,6 +32,7 @@ export default {
           location: card.location,
           date_started: card.date_started,
           date_ended: card.date_ended,
+          id: card.id,
         }))
       })
   }
@@ -44,7 +45,7 @@ export default {
     <div class="grid grid-cols-3 gap-y-10 gap-x-10">
       <template v-for="card in cards">
         <Card :name="card.name" :location="card.location" :about="card.about" :date_ended="card.date_ended"
-          :date_started="card.date_started" />
+          :date_started="card.date_started" :id="card.id" />
       </template>
     </div>
   </div>

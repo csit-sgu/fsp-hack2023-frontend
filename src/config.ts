@@ -1,1 +1,1 @@
-export const BACKEND_URL = "http://100.69.114.200:5001"
+export const BACKEND_URL = "https://api.orangecoding.ru"

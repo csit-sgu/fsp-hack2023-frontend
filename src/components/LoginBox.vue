@@ -1,36 +1,26 @@
-<script setup lang="ts">
-import BackgroundSquares from '../components/BackgroundSquares.vue';
-import { BACKEND_URL } from '../config'
-</script>
-
 <script lang="ts">
-import axios from 'axios'
+import BackgroundSquares from '../components/BackgroundSquares.vue';
+import { useAuthStore } from '../stores/authstore'
 
 export default {
+  setup() {
+    const auth = useAuthStore();
+    return { auth };
+  },
   data: function () {
     return {
       inputEmail: null,
       inputPassword: null,
-      response: null
+      response: null,
+      err: ""
     }
   },
   methods: {
-    signin: function (event: Event) {
-      let formData = {
-        email: this.inputEmail,
-        password: this.inputPassword
-      };
-      axios
-        .request({
-          url: `${BACKEND_URL}/auth/login`,
-          method: 'post',
-          headers: { 'Content-Type': 'application/json' },
-          data: JSON.stringify(formData),
-          withCredentials: true
-        })
-        .then(response => {
-          console.log(response)
-        });
+    async signin(_: Event) {
+      let result = await this.auth.signIn(this.inputEmail, this.inputPassword)
+      if (result != null) {
+        this.err = result
+      }
     }
   }
 }
@@ -66,6 +56,9 @@ export default {
           <a class="inline-block align-baseline font-bold text-sm text-[color:var(--primary-color)]" href="/register">
             Регистрация
           </a>
+        </div>
+        <div class="mt-3 text-red-500">
+          {{ err }}
         </div>
       </form>
     </div>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { BACKEND_URL } from '@/config';
 import BackgroundSquares from '../components/BackgroundSquares.vue';
+import { router } from '../router'
 </script>
 
 <script lang="ts">
@@ -22,14 +24,17 @@ export default {
       inputIsMale: null,
       inputIsFemale: null,
       response: null,
+      err: "",
     }
   },
   methods: {
     register: function (_: Event) {
-      let birthday: string = this.inputBirthday!;
-      if (birthday != null) {
-        birthday = birthday.replace('-', '/');
+      let bd: Date = this.inputBirthday
+      if (bd == null) {
+        this.err = "Не удалось зарегистрироваться";
+        return;
       }
+      let birthday = bd.getFullYear() + '/' + bd.getMonth() + '/' + bd.getDay()
       let gender = this.inputIsFemale == "on" ? 'FEMALE' : 'MALE';
       let formData = {
         auth: {
@@ -52,15 +57,19 @@ export default {
       console.log(JSON.stringify(formData));
       axios
         .request({
-          url: 'http://100.69.114.200:5002/auth/register',
+          url: `${BACKEND_URL}/auth/register`,
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           data: JSON.stringify(formData),
           withCredentials: true
         })
         .then(response => {
-          this.response = response.data;
-          console.log(response)
+          if (response.status == 201) {
+            this.response = response.data;
+            router.push('/login')
+          } else {
+            this.err = "Не удалось зарегистрироваться";
+          }
         });
     }
   }
@@ -191,6 +200,9 @@ export default {
         type="submit">
         Зарегистрироваться
       </button>
+      <div v-if="err != ''" class="mt-1 text-red-500">
+        {{ err }}
+      </div>
     </form>
   </div>
 </template>
